@@ -1,4 +1,4 @@
-// To print reverse of a number using loop
+// To print reverse of a number (without storing) using loop
 import java.util.*;
 public class reverseofnum
 {
