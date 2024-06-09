@@ -1,9 +1,9 @@
 /* To print the following pattern
-    *****
-   *   *
-  *   *
- *   *
-*   *
+    * * * * *
+   *       *
+  *       *
+ *       *
+* * * * * 
 */
 import java.util.*;
 public class HollowRhombus
