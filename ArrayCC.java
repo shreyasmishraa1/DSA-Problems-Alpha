@@ -139,28 +139,46 @@ public class ArrayCC
         System.out.println("Min sum = " + min);
     }
 
+    //Kadane's Algorithm
+    public static void Kadane()
+    {
+        int num[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+        int max = 0, sum = 0;
+        for (int i = 0; i < num.length; i++)
+        {
+            sum += num[i];
+            if (sum < 0)
+                sum = 0;
+            if (sum > max)
+                max = sum;
+        }
+        System.out.print(max);
+    }
     public static void main(String[] args)
     {
         int num[] = {2,4,6,8,10};
         int key = 18;
 
         // Calling Binary Search
-        //System.out.println(BinarySearch(num,key));
+        System.out.println(BinarySearch(num,key));
 
         // Reversing array
-        // Reverse_Array(num);
+         Reverse_Array(num);
 
         // Printing the new array after it has been reversed
-        //for(int i = 0; i < num.length; i++)
-           //System.out.print(num[i] + " ");
+        for(int i = 0; i < num.length; i++)
+           System.out.print(num[i] + " ");
 
         // Pairing array
-        //Pairing(num);
+        Pairing(num);
 
         // Sub arrays
-        //Print_SubArrays(num);
+        Print_SubArrays(num);
 
         // Prefix Sum
         Prefix_Sum(num);
+
+        // Kadane's Algorithm
+        Kadane();
     }
 }
