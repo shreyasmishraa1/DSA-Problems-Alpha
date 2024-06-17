@@ -103,6 +103,41 @@ public class ArrayCC
         System.out.println("Min sum = " + min);
     }
 
+    // Prefix Sum     ***** Very IMPORTANT ****
+    public static void Prefix_Sum(int num[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int prefix_array[] = new int[num.length];
+        // creating prefix array
+        prefix_array[0] = num[0];
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for ( int i = 1; i < num.length; i++)
+        {
+            prefix_array[i] =  prefix_array[i-1] + num[i];
+        }
+        // Calculating sum and dispalying min and max sum
+        for ( int i = 0; i < prefix_array.length; i++ )
+        {
+            int start = i;
+            for ( int j = i; j < prefix_array.length; j++)
+            {
+                int sum = 0;
+                int end = j;
+                sum = start == 0 ? prefix_array[end] : prefix_array[end] - prefix_array[start - 1];
+                if ( max < sum)
+                    max = sum;
+                if ( min > sum)
+                    min = sum;
+                System.out.println("; Sum = " + sum);
+            }
+            System.out.println();
+
+        }
+        System.out.println();
+        System.out.println("Max sum = " + max);
+        System.out.println("Min sum = " + min);
+    }
 
     public static void main(String[] args)
     {
@@ -110,19 +145,22 @@ public class ArrayCC
         int key = 18;
 
         // Calling Binary Search
-        System.out.println(BinarySearch(num,key));
+        //System.out.println(BinarySearch(num,key));
 
         // Reversing array
-         Reverse_Array(num);
+        // Reverse_Array(num);
 
         // Printing the new array after it has been reversed
-        for(int i = 0; i < num.length; i++)
-           System.out.print(num[i] + " ");
+        //for(int i = 0; i < num.length; i++)
+           //System.out.print(num[i] + " ");
 
         // Pairing array
-        Pairing(num);
+        //Pairing(num);
 
         // Sub arrays
-        Print_SubArrays(num);
+        //Print_SubArrays(num);
+
+        // Prefix Sum
+        Prefix_Sum(num);
     }
 }
