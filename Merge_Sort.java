@@ -15,7 +15,7 @@ public class Merge_Sort
     // merge function
     public static void merge(int arr[], int si, int mid, int ei)
     {
-        int temp[] = new int[ei-si+1];
+        int temp[] = new int[ei-si+1]; // do not forget +1
         int i = si; // left iterator
         int j = mid+1; // right iterator
         int k = 0; // temp iterator
